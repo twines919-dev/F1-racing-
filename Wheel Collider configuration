@@ -1,0 +1,8 @@
+Parameter Starting value
+Radius 0.34
+Suspension Distance 0.20
+Spring 35000
+Damper 4500
+Target Position 0.5
+Forward friction stiffness 1.0
+Sideways friction stiffness 1.0
