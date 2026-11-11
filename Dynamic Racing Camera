@@ -1,0 +1,67 @@
+
+using UnityEngine;
+
+[RequireComponent(typeof(Camera))]
+public class AdvancedCameraFollow : MonoBehaviour
+{
+    public Transform target;
+    public Rigidbody targetBody;
+
+    public Vector3 offset = new Vector3(0, 4, -8);
+    public float followSmooth = 6f;
+    public float rotationSmooth = 5f;
+
+    public float normalFOV = 65f;
+    public float maxFOV = 78f;
+
+    private Camera cam;
+
+    void Start()
+    {
+        cam = GetComponent<Camera>();
+    }
+
+    void LateUpdate()
+    {
+        if (target == null) return;
+
+        Vector3 desiredPosition =
+            target.TransformPoint(offset);
+
+        transform.position = Vector3.Lerp(
+            transform.position,
+            desiredPosition,
+            followSmooth * Time.deltaTime
+        );
+
+        Vector3 lookPoint =
+            target.position + Vector3.up * 1.3f;
+
+        Quaternion desiredRotation =
+            Quaternion.LookRotation(
+                lookPoint - transform.position
+            );
+
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            desiredRotation,
+            rotationSmooth * Time.deltaTime
+        );
+
+        float speed = targetBody != null
+            ? targetBody.linearVelocity.magnitude * 3.6f
+            : 0f;
+
+        float targetFOV = Mathf.Lerp(
+            normalFOV,
+            maxFOV,
+            Mathf.Clamp01(speed / 180f)
+        );
+
+        cam.fieldOfView = Mathf.Lerp(
+            cam.fieldOfView,
+            targetFOV,
+            3f * Time.deltaTime
+        );
+    }
+}
