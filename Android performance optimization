@@ -1,0 +1,18 @@
+Ultra-realistic visuals need careful optimization, especially on mobile phones.
+Recommended quality profiles Feature High-end Android Mid-range Android
+FPS target 60 30–60
+Shadows High Medium
+Texture size 2048 1024
+Anti-aliasing 2x 2x or off
+Render scale 1.0 0.8–0.9
+Reflection probes Selected Limited
+Post-processing Moderate Minimal
+Additional optimization:
+Use LOD Groups on cars and scenery.
+Use baked lighting for static environments.
+Avoid too many real-time lights.
+Use GPU instancing where appropriate.
+Compress textures using Android-compatible formats.
+Test on the actual Android phone.
+Profile CPU, GPU and memory usage.
+Don't enable expensive effects such as heavy motion blur or screen-space reflections on every device.
