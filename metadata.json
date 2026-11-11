@@ -1,8 +1,6 @@
 {
-  "name": "F1 Racing",
-  "description": "High-octane Formula 1 racing game featuring playable 2D top-down and pseudo-3D cockpit racing modes with physics, responsive steering and boost, dynamic AI rivals, pit stops, grand prix circuits, and high score tracking.",
+  "name": "Apex GP - Formula 1 Racing Championship",
+  "description": "High-octane 3D Formula 1 racing simulation featuring realistic aerodynamics, AI rivals, DRS, tire management, and telemetry HUD.",
   "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
