@@ -1,0 +1,8 @@
+{
+  "name": "F1 Racing",
+  "description": "High-octane Formula 1 racing game featuring playable 2D top-down and pseudo-3D cockpit racing modes with physics, responsive steering and boost, dynamic AI rivals, pit stops, grand prix circuits, and high score tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
